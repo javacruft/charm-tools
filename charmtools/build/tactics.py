@@ -295,7 +295,6 @@ class SerializedTactic(ExactMatch, Tactic):
                 else:
                     namespace = self.data
                 for key in dels:
-                    # TODO: Chuck edit this thing
                     utils.delete_path(key, namespace)
         if not self.target_file.parent.exists():
             self.target_file.parent.makedirs_p()

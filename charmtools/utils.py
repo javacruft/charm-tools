@@ -52,9 +52,6 @@ def deepmerge(dest, src):
     for k, v in src.iteritems():
         if dest.get(k) and isinstance(v, dict):
             deepmerge(dest[k], v)
-        elif dest.get(k) and isinstance(v, list):
-            if not v in dest.get(k):
-                dest[k].extend(v)
         else:
             dest[k] = copy.deepcopy(v)
     return dest
@@ -62,7 +59,6 @@ def deepmerge(dest, src):
 
 def delete_path(path, obj):
     """Delete a dotted path from object, assuming each level is a dict"""
-    # TODO: Support lists
     parts = path.split('.')
     for p in parts[:-1]:
         obj = obj[p]
