@@ -26,6 +26,8 @@ KNOWN_METADATA_KEYS = [
     'peers',
     'tags',
     'storage',
+    'extra-bindings',
+    'series',
 ]
 
 KNOWN_RELATION_KEYS = ['interface', 'scope', 'limit', 'optional']
